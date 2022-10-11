@@ -12,7 +12,7 @@ export const NavBar = ()=>{
                 <img className="imagenLogo" src={ImagenLogo} alt="logo" />
             </Link>
             <div className="list">
-                <Link to="/inicio">Inicio</Link>
+                <Link to="/">Inicio</Link>
                 <NavLink className={({isActive})=>isActive === true ? 'claseActiva' : 'claseInactiva'} to="/vinos/tinto"> Tintos</NavLink>
                 <NavLink className={({isActive})=>isActive === true ? 'claseActiva' : 'claseInactiva'} to="/vinos/blanco"> Blancos</NavLink>
                 <NavLink className={({isActive})=>isActive === true ? 'claseActiva' : 'claseInactiva'} to="/vinos/rosado"> Rosados</NavLink>
