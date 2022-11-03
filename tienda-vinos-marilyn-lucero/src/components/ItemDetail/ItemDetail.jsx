@@ -21,8 +21,9 @@ export const ItemDetail = ({item})=>{
             <div className='img-container'>
                 <h4>{item.name}</h4>
                 <h5>$ {item.price}</h5>
+                <h6>{item.details}</h6>
             </div>
-            <ItemCount stock={5} initial={1} onAdd={agregarProducto}/>
+            <ItemCount stock={item.stock} initial={1} onAdd={agregarProducto}/>
         </div>
     )
 }

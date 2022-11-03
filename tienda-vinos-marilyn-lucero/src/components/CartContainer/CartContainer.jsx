@@ -3,15 +3,15 @@ import { CartContext } from "../../context/CartContext";
 import { db } from "../../utils/firebase";
 import {collection, addDoc, doc, updateDoc} from "firebase/firestore";
 import { Link } from "react-router-dom";
+import swal from 'sweetalert2';
 
 export const CartContainer = ()=>{
     const value = useContext(CartContext);
-    const {productosCarrito, getTotalPrice, getTotalProducts, removeItem, vaciarCarrito} = value;
+    const {productosCarrito, getTotalPrice, getTotalProducts, removeItem, removeAll, mostrarAlerta} = value;
     const [compraId, setCompraId] = useState("");
 
     const sendOrder = (evt)=>{
         evt.preventDefault();
-        // console.log(evt.target[0].value)
         const compra = {
             buyer:{
                 name: evt.target[0].value,
@@ -21,7 +21,11 @@ export const CartContainer = ()=>{
             items: productosCarrito,
             total: getTotalPrice()
         }
-        // console.log("compra", compra)
+        const mostrarAlerta = () => {
+            swal.fire("Tu compra fue registrada bajo el ID")
+            console.log(mostrarAlerta);
+          }
+        
         //crear la referencia de donde voy a guardar la informacion en la base de datos.
         const queryRef = collection(db,"orders");
         //agregar la informacion
@@ -61,6 +65,9 @@ export const CartContainer = ()=>{
                         </div>
                     ))
                 }
+                 <div className='vaciar'>
+                    <button onClick={()=> removeAll()}>Vaciar</button>
+                 </div>
                 <p><strong>Precio total: </strong> ${getTotalPrice()}</p>
                 <p><strong>Total de productos: </strong> {getTotalProducts()}</p>
                 <form onSubmit={sendOrder}>
@@ -70,10 +77,12 @@ export const CartContainer = ()=>{
                     <input type="tel" placeholder="Telefono"/>
                     <label>Correo</label>
                     <input type="email" placeholder="Ingrese su correo"/>
-                    <button type="submit">Enviar orden</button>
+                    <button type="submit" onClick={()=> mostrarAlerta()}>Enviar orden</button>
                 </form>
             </div>
             <button onClick={updateProduct}>Actualizar producto</button>
         </div>
+        
+        
     )
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import './ItemDetailContainer.css';
-import { arregloProductos } from "../basededatos/basededatos";
+import { arregloProductos } from "../../components/basededatos/basededatos";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import {db} from "../../utils/firebase";
@@ -11,19 +11,8 @@ export const ItemDetailContainer = ()=>{
     const {id} = useParams();
     const [itemProduct, setItemProduct] = useState({});
 
-    // const promesa = new Promise((resolve, reject)=>{
-    //     setTimeout(() => {
-    //         resolve(arregloProductos);
-    //     }, 2000);
-    // })
-
     useEffect(()=>{
         const getProducto = async()=>{
-            // const productos = await promesa;
-            // // console.log('productos', productos);
-            // const producto = productos.find(elemento=>elemento.id === parseInt(id));
-            // // console.log("producto", producto)
-            // setItemProduct(producto);
 
             //creamos la referencia del documento que vamos a consultar
             const queryRef = doc(db,"items",id);

@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'materialize-css';
+import Swal from 'sweetalert2'
 import { Button, Card, Row, Col } from 'react-materialize';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -1,36 +1,21 @@
 import {useEffect, useState} from "react";
 import "./ItemListContainer.css"
-import {arregloProductos} from "../../components/basededatos/basededatos";
 import {ItemList} from "../../components/ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import {db} from "../../utils/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
 export const ItemListContainer = ()=>{
-    console.log(useParams()); // {categoryName:""}
-    // const categoryName = useParams().categoryName;
+    console.log(useParams());
     const {categoryId} = useParams();
-    // console.log(categoryId);
+
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // const promesa = new Promise((resolve, reject)=>{
-    //     setTimeout(() => {
-    //         resolve(arregloProductos);
-    //     }, 2000);
-    // })
+   
 
     useEffect(()=>{
-        // promesa.then((response)=>{
-        //     if(categoryId){
-        //         //vamos a filtrar por categoria
-        //         const productsFiltered = response.filter(elm=>elm.categoria === categoryId);
-        //         setProductos(productsFiltered);
-        //     } else{
-        //         //mostrar todos los productos
-        //         setProductos(response)
-        //     }
-        // })
+        
         const queryRef = categoryId ? query(collection(db,"items"), where("category","==",categoryId)) : collection(db,"items");
         getDocs(queryRef).then((response)=>{
             const results = response.docs;
