@@ -8,16 +8,18 @@ export const NavBar = ()=>{
 
     return(
         <nav className="navegacion">
-            <Link to="/inicio">
+            <Link to="/">
                 <img className="imagenLogo" src={ImagenLogo} alt="logo" />
             </Link>
             <div className="list">
                 <Link to="/">Inicio</Link>
-                <NavLink className={({isActive})=>isActive === true ? 'claseActiva' : 'claseInactiva'} to="/vinos/tinto"> Tintos</NavLink>
-                <NavLink className={({isActive})=>isActive === true ? 'claseActiva' : 'claseInactiva'} to="/vinos/blanco"> Blancos</NavLink>
-                <NavLink className={({isActive})=>isActive === true ? 'claseActiva' : 'claseInactiva'} to="/vinos/rosado"> Rosados</NavLink>
+                <NavLink className={({isActive})=>isActive === true ? 'claseActiva' : 'claseInactiva'} to="/category/tinto"> Tintos</NavLink>
+                <NavLink className={({isActive})=>isActive === true ? 'claseActiva' : 'claseInactiva'} to="/category/blanco"> Blancos</NavLink>
+                <NavLink className={({isActive})=>isActive === true ? 'claseActiva' : 'claseInactiva'} to="/category/rosado"> Rosados</NavLink>
             </div>
-            <CartWidget/>
+                <Link to="/cart">
+                    <CartWidget/>
+                </Link>
         </nav>
     )
 }

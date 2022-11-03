@@ -5,8 +5,8 @@
     align-items: center;
     width: 200px;
     height: auto;
-    background: #47d7ac;
-    color: black;
+    background: #820b37;
+    color: rgb(252, 252, 249);
     margin: 10px auto;
     padding: 10px;
 }
@@ -21,6 +21,9 @@
     width: 90%;
     height: 30px;
 }
+.colorLetter{
+    color: white;
+}
 
 .botonControl {
     width: 30px;
@@ -28,7 +31,7 @@
     font-size: 20px;
     color: white;
     border-radius: 50%;
-    background: #101c2b;
+    background: #ec7ee3;
 }
 .botonControl:disabled{
     background: grey;
@@ -37,7 +40,7 @@
 .botonAgregar {
     padding: 10px;
     border-radius: 5px;
-    background: #101c2b;
+    background: #a65cdf;
     color: white;
     width: 100%;
     margin: 10px 0;
