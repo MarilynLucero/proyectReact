@@ -1,5 +1,5 @@
 # Proyecto React Coderhouse, Comisión 38120
-## Profesor Freddy Chaparro.
+## Profesor: Freddy Chaparro.
 
 ### Descripción
 La página esta relacionada a la venta de vinos importados y nacionales.
@@ -8,7 +8,7 @@ La página esta relacionada a la venta de vinos importados y nacionales.
 - Instalar Git y NodeJS por `npm` (Versiones 2.36.1.windows.1 y 16.17.0)
 - Clonar repositorio con `git clone https://github.com/MarilynLucero/proyectReact`
 - Iniciar proyecto con `npm start`
-- Se va a ejectura en: (http://localhost:3000/)
+- Se va a ejecutar en: (http://localhost:3000/)
 
 ### Construido con:
 - HTML5
@@ -36,7 +36,7 @@ La página esta relacionada a la venta de vinos importados y nacionales.
 ```
 
 ### Adaptabilidad
-La página no esta diseñada para celulares/tablets.
+La página NO esta diseñada para celulares/tablets.
 
 > Autor.
 **[Marilyn Lucero](https://www.linkedin.com/in/marilyn-lucero-70782193/)**

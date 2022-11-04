@@ -1,0 +1,7 @@
+.formBox{
+    display: flex;
+    flex-direction: column;
+}
+.infCart{
+   margin-left: 50px;
+}
